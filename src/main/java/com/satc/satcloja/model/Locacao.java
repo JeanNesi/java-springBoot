@@ -1,15 +1,25 @@
 package com.satc.satcloja.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Locacao extends EntityId implements OperacaoFinanceira {
+    @Column(name = "dt_locacao",nullable = false)
     private LocalDate dataLocacao;
+    @Column(name = "dt_devolucao", nullable = false)
     private LocalDate dataDevolucao;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+    @Column(name = "endereco")
     private String endereco;
+    @Column(name = "observacao", nullable = false)
     private String obervacao;
+    @OneToMany(mappedBy = "locacao")
     private List<ItemLocacao> itens = new ArrayList<>();
 
     public LocalDate getDataLocacao() {

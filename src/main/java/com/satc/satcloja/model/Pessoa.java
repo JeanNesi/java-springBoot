@@ -1,9 +1,17 @@
 package com.satc.satcloja.model;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Pessoa extends EntityId {
+    @Column(name = "nome", length = 100, nullable = false)
     private String nome;
+    @Column(name = "telefone", length = 11, nullable = false)
     private String telefone;
+    @Column(name = "endereco")
     private String endereco;
+    @Column(name = "email", nullable = false)
     private String email;
 
 

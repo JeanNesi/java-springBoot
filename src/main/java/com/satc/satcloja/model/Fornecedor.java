@@ -1,9 +1,14 @@
 package com.satc.satcloja.model;
 
-public class Fornecedor extends Pessoa {
-    private String cnpj;
-    private String inscricaoEstadual;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
+public class Fornecedor extends Pessoa {
+    @Column(name = "cnpj", length = 14, nullable = false)
+    private String cnpj;
+    @Column(name = "insc_estadual", insertable = false )
+    private String inscricaoEstadual;
 
     public String getCnpj() {
         return cnpj;

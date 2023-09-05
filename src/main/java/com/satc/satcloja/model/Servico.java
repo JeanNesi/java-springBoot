@@ -1,6 +1,11 @@
 package com.satc.satcloja.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
 public class Servico extends ItemVendavel {
+    @Column(name = "qntd_horas", nullable = false)
     private Double quantidadeHoras;
 
     public Servico(String descricao, Double quantidadeHoras, Double valorUnitario) {

@@ -1,8 +1,15 @@
 package com.satc.satcloja.model;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class ItemVendavel extends EntityId{
+    @Column(name = "descricao", nullable = false)
     private String descricao;
+    @Column(name = "valor_unitario", nullable = false)
     private Double valorUnitario;
+    @Column(name = "estocavel")
     private Boolean estocavel;
 
     public String getDescricao() {
