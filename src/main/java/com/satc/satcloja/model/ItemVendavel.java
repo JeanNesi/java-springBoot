@@ -1,9 +1,10 @@
 package com.satc.satcloja.model;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_venda")
 public abstract class ItemVendavel extends EntityId{
     @Column(name = "descricao", nullable = false)
     private String descricao;

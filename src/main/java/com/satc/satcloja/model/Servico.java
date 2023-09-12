@@ -1,17 +1,16 @@
 package com.satc.satcloja.model;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+@DiscriminatorValue("servico")
 public class Servico extends ItemVendavel {
-    @Column(name = "qntd_horas", nullable = false)
+    @Column(name = "qntd_horas")
     private Double quantidadeHoras;
 
-    public Servico(String descricao, Double quantidadeHoras, Double valorUnitario) {
-        super.setDescricao(descricao);
-        this.quantidadeHoras = quantidadeHoras;
-        super.setValorUnitario(valorUnitario);
+    public Servico() {
     }
 
     public Double getQuantidadeHoras() {

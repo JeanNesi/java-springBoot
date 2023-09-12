@@ -60,6 +60,14 @@ public class ItemLocacao extends EntityId {
         this.desconto = desconto;
     }
 
+    public Locacao getLocacao() {
+        return locacao;
+    }
+
+    public void setLocacao(Locacao locacao) {
+        this.locacao = locacao;
+    }
+
     public Double getValorCalculado(){
         double valorTotal = this.getValorUnitario() * this.getQuantidade();
         double descontoCalculado = valorTotal * (this.getDesconto() / 100);

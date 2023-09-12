@@ -1,12 +1,10 @@
 package com.satc.satcloja.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@DiscriminatorValue("produto")
 public class Produto extends ItemVendavel {
     @Column(name = "nome", length = 100, nullable = false)
     private String nome;

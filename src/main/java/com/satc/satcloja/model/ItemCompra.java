@@ -60,6 +60,14 @@ public class ItemCompra extends EntityId {
         this.desconto = desconto;
     }
 
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
     public Double getValorCalculado(){
         double valorTotal = this.getValorUnitario() * this.getQuantidade();
         double descontoCalculado = valorTotal * (this.getDesconto() / 100);
